@@ -47,6 +47,9 @@ jobs:
     needs: check-version
     if: needs.check-version.outputs.version-changed == 'true'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required for creating releases
+      id-token: write  # Required for NPM provenance
     steps:
       - uses: actions/checkout@v4
       
@@ -65,12 +68,10 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       
       - name: Create GitHub Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ needs.check-version.outputs.new-version }}
-          release_name: shov-mcp v${{ needs.check-version.outputs.new-version }}
+          name: shov-mcp v${{ needs.check-version.outputs.new-version }}
           body: |
             ## shov-mcp v${{ needs.check-version.outputs.new-version }}
             

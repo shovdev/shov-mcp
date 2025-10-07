@@ -1,6 +1,6 @@
 {
   "name": "shov-mcp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "MCP (Model Context Protocol) client for Shov - Connect AI assistants to your Shov APIs",
   "main": "src/index.js",
   "bin": {
