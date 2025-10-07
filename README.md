@@ -2,7 +2,7 @@
 
 Universal MCP (Model Context Protocol) client for Shov. Connect AI assistants to:
 
-1. **Shov Platform API** (`api.shov.com`) - Create/manage projects, deploy code, manage data
+1. **Shov Platform API** (`shov.com/api`) - Create/manage projects, deploy code, manage data
 2. **User-built Shov APIs** (`yourapp.shov.dev`) - Connect to any Shov project's custom API
 
 ## Installation
